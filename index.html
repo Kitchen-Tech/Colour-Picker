@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Color Picker</title>
+    <link rel="stylesheet" href="style.css"> </head>
+<body>
+    <h1>Image Color Picker</h1>
+
+    <div>
+        <label for="imageUpload">Upload an Image:</label>
+        <input type="file" id="imageUpload" accept="image/*">
+    </div>
+
+    <div class="content-area">
+        <div class="image-container">
+            <canvas id="imageCanvas"></canvas>
+            <img id="uploadedImage" src="#" alt="Uploaded Image" style="display: none; max-width: 500px; max-height: 500px;">
+        </div>
+
+        <div class="color-info">
+            <h2>Picked Color:</h2>
+            <div id="colorPreview" style="width: 100px; height: 100px; border: 1px solid #000; margin-bottom: 10px;"></div>
+            <p><strong>RGB:</strong> <span id="rgbValue">-</span></p>
+            <p><strong>HEX:</strong> <span id="hexValue">-</span></p>
+        </div>
+    </div>
+
+    <script src="script.js"></script> </body>
+</html>

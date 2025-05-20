@@ -1,0 +1,108 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    background-color: #f4f4f4;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h1 {
+    color: #333;
+    text-align: center;
+}
+
+/* Container for image upload input */
+div:has(> #imageUpload) { /* Targets the div directly containing the imageUpload input */
+    margin-bottom: 20px;
+    padding: 15px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+#imageUpload {
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+/* Main content area for image and color info */
+.content-area {
+    display: flex;
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+    gap: 20px; /* Space between image container and color info */
+    justify-content: center; /* Center items if they don't fill the space */
+    margin-top: 20px;
+    width: 100%;
+    max-width: 900px; /* Max width for the content area */
+}
+
+.image-container {
+    border: 1px solid #ccc;
+    padding: 10px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    /* The canvas will determine the size, but we can set a max-width for responsiveness */
+    max-width: 100%; /* Ensure it doesn't overflow its container */
+}
+
+#imageCanvas {
+    display: block; /* Removes extra space below the canvas */
+    max-width: 100%; /* Make canvas responsive within its container */
+    height: auto;   /* Maintain aspect ratio */
+    cursor: crosshair; /* Change cursor to indicate it's pickable */
+    border-radius: 4px;
+}
+
+.color-info {
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    min-width: 220px; /* Minimum width for the color info box */
+}
+
+.color-info h2 {
+    margin-top: 0;
+    color: #555;
+}
+
+#colorPreview {
+    width: 100px;
+    height: 100px;
+    border: 1px solid #000;
+    margin-bottom: 15px;
+    background-color: transparent; /* Default state */
+    border-radius: 4px;
+}
+
+.color-info p {
+    font-size: 1em;
+    margin: 8px 0;
+}
+
+.color-info p strong {
+    color: #444;
+}
+
+/* Basic responsiveness */
+@media (max-width: 768px) {
+    .content-area {
+        flex-direction: column; /* Stack items vertically on smaller screens */
+        align-items: center;
+    }
+
+    .image-container,
+    .color-info {
+        width: 90%; /* Adjust width for smaller screens */
+        max-width: 500px; /* Max width for these containers on small screens */
+    }
+
+    #imageCanvas {
+        max-width: 100%; /* Canvas should not exceed its container width */
+    }
+}
